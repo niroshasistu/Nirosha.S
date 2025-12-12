@@ -1,11 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration form</title>
 </head>
+
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'segoe UI', Tahoma, Geneva, verdana, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background:linear-gradient(135deg,#1e93ab,#fefbc7);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 700px) {
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .form-container {
+        background-color: #fff;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 100%;
+    }
+
+    h2 {
+        text-align: left;
+        margin-bottom: 20px;
+        color: #333;
+
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 6px;
+        font-size: 14px;
+        color: #333
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .gender-group {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        padding-top: 6px;
+    }
+
+    .gender-option {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    input[type-="radio"] {
+        grid-column: span 2;
+    }
+
+    .submit-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        background-color:#306edb;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+
+    }
+
+    .submit-btn:hover {
+        background-color: #1d5fd0;
+
+    }
+</style>
+</head>
+
 <body>
-    
-</body>
+    <div class="form-container">
+        <h2>Registration form</h2>
+        <form>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="firstName">FirstName</label>
+                    <input type="text" id="firstName" value="sistu" />
+                </div>
+                <div class="form-group">
+                    <label for="lastName">LastName</label>
+                    <input type="text" id="lastName" value="nirosha" />
+                </div>
+                <div class="form-group">
+                    <label for="Birthday">Birthday</label>
+                    <input type="date" id="Birthday" />
+                </div>
+                <div class="form group">
+                    <label>Gender</label>
+                    <div class="gender-group">
+                        <div class="gender-option">
+                            <input type="radio" name="gender" id="male" />
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="gender-option">
+                            <input type="radio" name="gender" id="Female" />
+                            <label for="Female">Female</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" />
+                </div>
+                <div class="form-group full width">
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                        <option>Choose Option</option>
+                        <option>uiux</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">submit</button>
+        </form>
+    </div> 
+</body>         
 </html>
